@@ -575,6 +575,9 @@ En bioinformática `curl` se utiliza para transferir desde archivos FASTA de sec
 Nota:
 `wget` hace algo parecido a `curl`, pero lo salva a un archivo directamente. No existe de base en Mac, pero es posible instalarlo.
 
+`wget -O cox1.fasta "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=protein&rettype=fasta&id=NR_130677,EU149777,EU568907,OP019831,OP019833,MF136066,MG255724,OP019828,NR_125332,NR_130673,NR_165947,NR_111251,NR_111007=fasta"` 
+
+
 Más info:
 
 * Cómo bajar archivos de GeneBank utilizando e-utils (ejemplo anterior): [http://www.ncbi.nlm.nih.gov/books/NBK25499/#chapter4.EFetch](http://www.ncbi.nlm.nih.gov/books/NBK25499/#chapter4.EFetch)
