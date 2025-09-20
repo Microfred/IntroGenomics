@@ -123,7 +123,7 @@ Para activar el ambiente es importante  activar el ambiente en el cual se instal
 
      $ conda activate qc
 
-### Para desactivar el ambiente necesitamos ejecutarl la siguiente orden
+Para desactivar el ambiente necesitamos ejecutarl la siguiente orden
 
      $ conda deactivate
 ---
