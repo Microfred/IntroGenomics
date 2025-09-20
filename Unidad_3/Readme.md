@@ -22,9 +22,9 @@ cat <<EOF>> $HOME/.bashrc
 if [ -d "\$HOME/bin" ] ; then
 export PATH="\$HOME/bin:\$PATH"
 fi
-EOF    
+EOF 
 ```
-
+---
 ### Recargar y revisar el $PATH
 
 ```
@@ -33,6 +33,7 @@ source $HOME/.bashrc
 echo $PATH
 ```
 
+---
 ## **Conda**
 
 LOS PASOS DE LA SECCIÓN DE CONDA SE HACEN **UNA SOLA VEZ**
@@ -44,6 +45,7 @@ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 bash Miniconda3-latest-Linux-x86_64.sh -b -p $HOME/bin/miniconda3
 rm Miniconda3-latest-Linux-x86_64.sh
 ```
+---
 ## Miniconda para Mac (procesador corei)
 ```
 cd $HOME/bin
@@ -51,6 +53,8 @@ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
 bash Miniconda3-latest-MacOSX-x86_64.sh -b -p $HOME/bin/miniconda3
 rm Miniconda3-latest-MacOSX-x86_64.sh
 ```
+---
+
 # Agregar Miniconda al $PATH
 
 ```
