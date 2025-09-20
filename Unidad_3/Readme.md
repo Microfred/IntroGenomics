@@ -451,15 +451,16 @@ mas dudas aca ...
 En este caso en particular, las secuencias no tienen adaptador ¿o sí? y tienen la misma longitud.
 
 * para *paired-END*
-
+```
 cd $HOME/Ensamble
 git clone https://github.com/ATGenomics/adapters.git $HOME/bin/adapters
 
 adapters="$HOME/bin/adapters/NexteraPE-PE.fa"
-
+```
 Activamos el entorno qc
-`source activate qc`
 
+`source activate qc`
+Ejecutamos el comando de Trimmomatic:
 ```
 trimmomatic PE -phred33 -threads 16 \
     00_raw/Salbidoflavus_S01_R1.fastq.gz  00_raw/Salbidoflavus_S01_R2.fastq.gz  \
@@ -490,30 +491,41 @@ done
 
   `conda deactivate`
 
-### Comparar lecturas, antes y después del recorte **trim**:
+Comparar lecturas, antes y después del recorte **trim**:
 
-Cuento cuántas secuencias tengo en el archivo `01_qc/Salbidoflavus_S01_R1.trim.fastq.gz`
+Cuento cuántas secuencias tengo en el archivo 
+
+`01_qc/Salbidoflavus_S01_R1.trim.fastq.gz`
 `zcat 01_qc/Salbidoflavus_S01_R1.trim.fastq.gz | awk 'END{ print NR/4 }'`
 
-Cuento cuántas secuencias tengo y de qué longitud en el archivo `01_qc/Salbidoflavus_S01_R1.trim.fastq.gz`
+Cuento cuántas secuencias tengo y de qué longitud en el archivo 
+
+`01_qc/Salbidoflavus_S01_R1.trim.fastq.gz`
 `zcat 01_qc/Salbidoflavus_S01_R1.trim.fastq.gz | \
     awk '{if(NR%4==2) print length($1)}' | sort -n | uniq -c`
 
-Cuento cuántas secuencias tengo en el archivo `01_qc/Salbidoflavus_S01_1U.trim.fastq.gz`
+Cuento cuántas secuencias tengo en el archivo 
+
+`01_qc/Salbidoflavus_S01_1U.trim.fastq.gz`
 `zcat 01_qc/Salbidoflavus_S01_1U.trim.fastq.gz | awk 'END{ print NR/4 }'`
 
 
-### Los mismo pero para R2:
-Cuento cuántas secuencias tengo en el archivo `01_qc/Salbidoflavus_S01_R2.trim.fastq.gz`
+Los mismo pero para R2:
+
+Cuento cuántas secuencias tengo en el archivo
+`01_qc/Salbidoflavus_S01_R2.trim.fastq.gz`
 `zcat 01_qc/Salbidoflavus_S01_R2.trim.fastq.gz | awk 'END{ print NR/4 }'`
 
-Cuento cuántas secuencias tengo y de qué longitud en el archivo `01_qc/Salbidoflavus_S01_R2.trim.fastq.gz`
+Cuento cuántas secuencias tengo y de qué longitud en el archivo
+`01_qc/Salbidoflavus_S01_R2.trim.fastq.gz`
 `zcat 01_qc/Salbidoflavus_S01_R2.trim.fastq.gz | \
     awk '{if(NR%4==2) print length($1)}' | sort -n | uniq -c`
 
-Cuento cuántas secuencias tengo en el archivo `01_qc/Salbidoflavus_S01_2U.trim.fq.gz`
+Cuento cuántas secuencias tengo en el archivo 
+`01_qc/Salbidoflavus_S01_2U.trim.fq.gz`
 `zcat 01_qc/Salbidoflavus_S01_2U.trim.fq.gz | awk 'END{ print NR/4 }'`
 
+---
 
 # 3.3 Evaluación de la preparación de la libreria con PhiX (control interno)
 
