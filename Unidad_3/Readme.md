@@ -100,28 +100,33 @@ EOF
 # [Mamba](https://mamba.readthedocs.io/en/latest/)
 
 `conda install -yc conda-forge mamba`
-## Antes de comenzar no olvides instalar seqkit
+
+Antes de comenzar no olvides instalar `seqkit`
 
 `conda install seqkit`
-## y finalmente escribe : `seqkit`
 
-### Es muy importante crear un ambiente en donde instalraemos los programas que se utilizarán en el control de calidad, para esto necesitamos instalarlos con el siguiente comando ( copia todo junto):
+y finalmente escribe : `seqkit`
+
+---
+
+# Control de Calidad (qc)
+**NOTA:** Es muy importante crear un ambiente en donde instalaremos los programas que se utilizarán para el control de calidad de nuestras secuencias, para esto necesitamos instalarlos con el siguiente comando *(copia todo junto)*:
 
 `mamba create -n qc -yc bioconda fastqc seqkit \
 trimmomatic samtools bwa assembly-stats pilon`
 
-# Solo para fastqc y trimmomatic :
+Solo para fastqc y trimmomatic :
 
 `mamba create -n qc -yc bioconda fastqc trimmomatic` 
 
-### Para activar el ambiente es importante  activar el ambiente en el cual se instalaron los programas, este ambiente se activa de esta manera:
+Para activar el ambiente es importante  activar el ambiente en el cual se instalaron los programas, este ambiente se activa de esta manera:
 
      $ conda activate qc
 
 ### Para desactivar el ambiente necesitamos ejecutarl la siguiente orden
 
      $ conda deactivate
-
+---
 
 # Ensamble de genomas
 
