@@ -77,7 +77,6 @@ se vería algo así: `/Users/ToxicAvenger/miniconda3/bin:/Users/ToxicAvenger/min
 
 `nano $HOME/.condarc`
 
----
 Si los tienes, se vería algo así:
 ```
   GNU nano 6.2                                                        /home/schifosi/.condarc                                                                 
@@ -97,7 +96,7 @@ channels:
   - defaults
 EOF
 ```
-
+---
 # [Mamba](https://mamba.readthedocs.io/en/latest/)
 
 `conda install -yc conda-forge mamba`
