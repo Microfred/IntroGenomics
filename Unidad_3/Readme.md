@@ -25,11 +25,10 @@ fi
 EOF 
 ```
 ---
-### Recargar y revisar el $PATH
+Recargar y revisar el $PATH
 
 ```
 source $HOME/.bashrc
-
 echo $PATH
 ```
 
@@ -55,7 +54,7 @@ rm Miniconda3-latest-MacOSX-x86_64.sh
 ```
 ---
 
-# Agregar Miniconda al $PATH
+Agregar Miniconda al $PATH
 
 ```
 cat <<EOF>> $HOME/.bashrc
@@ -64,12 +63,13 @@ EOF
 ```
 
 Recargar y revisar el $PATH
+```
+source $HOME/.bashrc
+echo $PATH
+```
+se vería algo así: `/Users/ToxicAvenger/miniconda3/bin:/Users/ToxicAvenger/miniconda3/condabin:`
 
-`source $HOME/.bashrc`
-`echo $PATH`
-`se vería algo así: /Users/ToxicAvenger/miniconda3/bin:/Users/ToxicAvenger/miniconda3/condabin:`
-
-
+---
 ### Agregar canales de Conda
 
 #Si tienes una instalación previa de `conda` primero revisa el archivo `.condarc` para evitar duplicación de canales, lo cual podría generar error cuando quieras instalar programas
