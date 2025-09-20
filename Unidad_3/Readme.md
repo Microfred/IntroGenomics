@@ -130,31 +130,32 @@ Para desactivar el ambiente necesitamos ejecutarl la siguiente orden
 
 # Ensamble de genomas
 
-### 1.- Crearemos un directorio y copiaremos ahí los datos de secuenciación de un genoma, el que ustedes quieran, éste debe ser secuenciado por la plataforma Illumina, 
+1.- Crearemos un directorio y copiaremos ahí los datos de secuenciación de un genoma, el que ustedes quieran, éste debe ser secuenciado por la plataforma Illumina, 
 
 `mkdir -p 00_raw/`
 
-### 2.- Descargamos el genoma de nuestro interés,  desde una red de internet estable. En este link puedes encontrar muchos:
+2.- Descargamos el genoma de nuestro interés,  desde una red de internet estable. En este link puedes encontrar muchos:
 
 [ver genomas](https://www.ebi.ac.uk/ena/browser/search) 
 
-### 3.- El genoma ha sido secuenciado por illumina, para este caso puden descargar el de *Escherichia coli*
+3.- El genoma ha sido secuenciado por illumina, para este caso puden descargar el de *Escherichia coli*
 
 ```
 wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR022/ERR022075/ERR022075_1.fastq.gz
-
 wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR022/ERR022075/ERR022075_2.fastq.gz
 ```
 
-### 4.- trabajaremos solo con una **submuestra** que elegiremos al azar a través de las siguientes instrucciones, ¿tienes duda de que significa cada una, cómo lo revisarías?
+4.- Trabajaremos solo con una **submuestra** que elegiremos al azar a través de las siguientes instrucciones, ¿tienes duda de que significa cada una, cómo lo revisarías?
 
 ```
 zcat ERR022075_1.fastq.gz | seqkit sample -p 0.15 -o ecoli_S01_R1.fastq.gz
 
 zcat ERR022075_2.fastq.gz | seqkit sample -p 0.15 -o ecoli_S01_R2.fastq.gz
 ```
+
 `seqkit`: Permite convertir, buscar, filtrar, deduplicar, dividir, mezclar, extraer
 
+---
 # **HASTA AQUÍ**
 
 ![alto.png](alto.png)
@@ -171,7 +172,7 @@ ___________________________________________________________________
 
 
 
-[https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0060204] (Identification of Optimum Sequencing Depth Especially for De Novo Genome Assembly of Small Genomes Using Next Generation Sequencing Data. Desai et al. PLOS One 2013)
+[https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0060204](Identification of Optimum Sequencing Depth Especially for De Novo Genome Assembly of Small Genomes Using Next Generation Sequencing Data. Desai et al. PLOS One 2013)
 
 Existen diferentes bases de datos que podemos utilizar para el análisis de genomas.
 
