@@ -73,11 +73,12 @@ se vería algo así: `/Users/ToxicAvenger/miniconda3/bin:/Users/ToxicAvenger/min
 ### Agregar canales de Conda
 
 *Si tienes una instalación previa de `conda` primero revisa el archivo `.condarc` para evitar duplicación de canales, lo cual podría generar error cuando quieras instalar programas*
-¿cómo los revisamos?
+¿cómo los revisamos?, con el siguiente comando: 
 
-`nano $HOME/.condarc `
+`nano $HOME/.condarc`
+
 ---
-Si los tienes se vería algo así:
+Si los tienes, se vería algo así:
 ```
   GNU nano 6.2                                                        /home/schifosi/.condarc                                                                 
 channels:
