@@ -280,8 +280,10 @@ zcat Q1_CSFP200001976-1a_H57HLDSXY_L1_2.fq.gz | seqkit sample -p 0.15 -o Salbido
 
 `zcat 00_raw/Salbidoflavus_S01_R2.fastq.gz | \
       awk '{if(NR%4==2) print length($1)}' | sort -n | uniq -c`
+      
+---
 
-#  3.1 FastQC
+# 3.1 FastQC
 
 El formato FASTQ es una simple extensión del formato FASTA: permite la habilidad de almacenar información alfanumérica de la calidad asociada a cada nucleótido en una secuencia.
 
@@ -314,13 +316,16 @@ conda deactivate
 ```
 El resultado se encuentra en el archivo **html**
 
-## 3.1.1 Estadísticos básicos:
+---
+3.1.1 Estadísticos básicos:
 
 ![figure2.png](figure2.png)
 
 La estadística básica de las secuencias incluye el nombre del archivo, cuántas secuencias contiene, si algunos reads fueron etiquetados con una mala calidad. En este caso tenemos 36,000,000 de secuencias, con un tamaño promedio de 51, un GC de 44% y ninguna lectura de mala calidad.
 
-## 3.1.2 Calidad de secuencias por base
+---
+
+3.1.2 Calidad de secuencias por base
 
 ![figure3.png](figure3.png)
 
@@ -329,7 +334,9 @@ La calidad de secuencia por base muestra la calidad de cada nucleótido. del 1 a
 * Cuando el cuartil más bajo de cualquier posición es menor a 10 ó la media es menor que 25, el módulo dará un *warning*.
 * Cuando el cuartil más bajo de cualquier posición es menor a 5 ó la media es menor que 20, el módulo dará un fail en este paso del control de calidad.
 
-## 3.1.3 Calidad de secuencias de *flowcell*
+---
+
+3.1.3 Calidad de secuencias de *flowcell*
 
 ![figure4.png](figure4.png)
 
@@ -337,8 +344,9 @@ Es un heatmap de la calidad del flowcell mostrando celdas individuales. Si la fi
 
 más errores comunes en el [*flowcell*](https://sequencing.qcfail.com/)
 
+---
 
-## 3.1.4 Score de calidad  por secuencia
+3.1.4 Score de calidad  por secuencia
 
 ![figure5.png](figure5.png)
 
@@ -349,7 +357,8 @@ El score de calidad por secuencia representa la calidad de cada lectura. El eje 
 * Con un valor debajo de 27 se obtendrá un warning y por debajo de 20 se dará un fail.
 En nuestro ejemplo, el promedio de calidad es 37, lo cual es muy bueno.
 
-## 3.1.5 Contenido por secuencia por base
+---
+3.1.5 Contenido por secuencia por base
 
 ![figure6.png](figure6.png)
 
@@ -360,7 +369,9 @@ El contenido de secuencias por base nos muestra, para cada posición de cada sec
 
 FastQC está diseñado para secuencias de genomas completos, pero nosotros utilizamos secuencias de RNASeq como input. Aunque tenemos una advertencia en este módulo, no es que haya algo malo con nuestras secuencias.
 
-## 3.1.6 Contenido de GC por secuencia
+---
+
+3.1.6 Contenido de GC por secuencia
 
 ![figure7.png](figure7.png)
 
@@ -370,7 +381,9 @@ El contenido de GC por secuencia muestra el contenido total para todos los reads
 * Se obtendrá un *fail* si más del 20% de las secuencias están fuera de la distribución normal.
 * Los fails son generalmente debidos a contaminación, frecuentemente por secuencias de adaptadores.
 
-## 3.1.7 Contenido de N por base
+---
+
+3.1.7 Contenido de N por base
 
 ![figure8.png](figure8.png)
 
@@ -381,7 +394,9 @@ El contenido de N por base muestra cualquier posición de las secuencias que no 
 
 Nuestras secuencias muestran el resultado ideal para este módulo.
 
-## 3.1.8 Distribución de longitud de secuencias
+---
+
+ 3.1.8 Distribución de longitud de secuencias
 
 ![figure9.png](figure9.png)
 
@@ -391,7 +406,9 @@ Este módulo mostrará un warning si hay cualquier variación en la longitud de 
 Un fail en este módulo significa que al menos una secuencia tiene longitud de 0.
 Nuestro ejemplo pasa este módulo ya que todas las secuencias tienen una longitud de de 51 sin variación alguna.
 
-## 3.1.9 Distribución de longitud de secuencias
+---
+
+3.1.9 Distribución de longitud de secuencias
 
 ![figure10.png](figure10.png)
 
@@ -402,17 +419,18 @@ La gráfica de los niveles de duplicación de secuencias muestran en el eje x, e
 * Este módulo nos dará un *warning* si más del 20% de las secuencias son duplicadas.
 * Dará *fail* si más del 50% de las secuencias están duplicadas.
 * Un *warning* o fail puede ser resultado de artefactos de PCR.
+---
 
-
-## 3.1.10 Secuencias sobre-representadas
+3.1.10 Secuencias sobre-representadas
 
 ![figure11.png](figure11.png)
 
 * Si alguna secuencia se calcula que representa más del 0.1 % del genoma completo será etiquetada como una secuencia sobre-representada y se obtendrá un warning, como se observa en este ejemplo.
 * La presencia de secuencias que representan más del 1% del genoma dará como resultado un fail.
 
+---
 
-## 3.1.11 Contenido de adaptadores
+3.1.11 Contenido de adaptadores
 
 ![figure12.png](figure12.png)
 
@@ -423,8 +441,10 @@ Este módulo busca secuencias específicas de adaptadores.
 Nuestro ejemplo no muestra contaminación con secuencias de adaptadores, lo cual es ideal. Si existiera un número significativo de secuencias de adaptadores, se debe utilizar un programa para recortarlos y realizar el análisis de calidad nuevamente.
 
 mas dudas aca ...
+
 [FastQC Documentation](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/)
 
+---------
 
 # 3.2 Recorte de lecturas (Trimeado) para lecturas *paired-end*
 
