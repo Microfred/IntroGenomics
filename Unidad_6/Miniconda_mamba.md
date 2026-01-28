@@ -17,20 +17,32 @@ Este repositorio contiene la guía práctica para la instalación y el manejo de
 7. [Reproducibilidad](#7-reproducibilidad)
 
 ---
+# Instalación y Configuración de Conda/Mamba para Bioinformática
+
+[![Conda](https://img.shields.io/badge/conda-environment-blue?logo=anaconda)](https://docs.conda.io/)
+[![Bioconda](https://img.shields.io/badge/bioconda-packages-green?logo=leaflet)](https://bioconda.github.io/)
+[![Conda-Forge](https://img.shields.io/badge/conda--forge-dependencies-orange?logo=condaforge)](https://conda-forge.org/)
+[![macOS](https://img.shields.io/badge/macOS-Intel%20%7C%20Apple%20Silicon-black?logo=apple)](https://www.apple.com/macos/)
+[![Linux](https://img.shields.io/badge/Linux-compatible-yellow?logo=linux)](https://www.kernel.org/)
+[![HPC](https://img.shields.io/badge/HPC-ready-purple)](#)
+[![Reproducible](https://img.shields.io/badge/Reproducible-Yes-brightgreen)](#)
+[![Environment](https://img.shields.io/badge/environment.yml-included-success?logo=yaml)](./environment.yml)
+
+---
 
 ## 1. El Problema: El "Infierno de las Dependencias"
 
-En el laboratorio húmedo, nunca mezclarías reactivos de dos protocolos distintos en el mismo tubo porque contaminarías la muestra.
-En bioinformática ocurre más o menos lo mismo con el software.
+En el laboratorio, nunca mezclarías reactivos de dos protocolos distintos en el mismo tubo porque contaminarías la muestra.
+En bioinformática ocurre más o menos lo mismo con los softwares.
 
 El problema principal es la **incompatibilidad de versiones**:
 
-* Un ensamblador de bacterias puede requerir `Python 3.7`.
-* Un anotador de hongos puede requerir `Python 3.10`.
+* Un **ensamblador** de bacterias puede requerir `Python 3.7`.
+* Un **anotador** de hongos puede requerir `Python 3.10`.
 
 * **Resultado:** Si instalas ambos en tu sistema base, uno dejará de funcionar.
 
-> **La Solución:** Usar **Entornos Virtuales**. Son "contenedores" aislados donde instalamos software específico para una tarea, sin que interfiera con los demás.
+> **La Solución:** Usar **Entornos Virtuales**. ¿qué es un __entorno__ Son "contenedores" aislados donde instalamos software específico para una tarea específica, sin que interfiera con los demás.
 
 ---
 
