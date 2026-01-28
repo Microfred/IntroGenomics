@@ -91,3 +91,100 @@ curl -O https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-arm64.sh
 bash Miniconda3-latest-MacOSX-arm64.sh
 ```
 
+
+
+
+## 2. Paso Final (Todos): Instalar Mamba
+Para acelerar todas las futuras instalaciones, instalamos mamba en el entorno base:
+
+```
+conda install -n base -c conda-forge mamba
+```
+
+## 3. Configuración de Canales
+Los canales son los repositorios donde se busca el software bioinformático. Es vital configurarlos en este orden estricto:
+
+```
+conda config --add channels defaults
+conda config --add channels bioconda
+conda config --add channels conda-forge
+conda config --set channel_priority strict
+```
+
+**Notas:**
+- **bioconda**: Software especializado (spades, prokka, busco)
+- **conda-forge**: Dependencias de sistema y librerías base
+
+## 4. Cheatsheet de Comandos
+
+| Acción | Comando | Descripción |
+|--------|---------|-------------|
+| **Crear entorno** | \`conda create -n nombre\` | Crea una "caja" vacía |
+| **Activar** | \`conda activate nombre\` | Entras a la caja para trabajar |
+| **Instalar** | \`mamba install paquete\` | Instala software (usar dentro del entorno) |
+| **Buscar** | \`mamba search paquete\` | Verifica versiones disponibles |
+| **Listar** | \`conda env list\` | Muestra tus entornos creados |
+| **Salir** | \`conda deactivate\` | Sales del entorno actual |
+| **Eliminar** | \`conda env remove -n nombre\` | Borra el entorno |
+
+## 5. Workflows: Bacterias vs Hongos
+
+---
+### 🦠 Workflow 1: Genómica de Procariotas (Bacterias)
+Herramientas ligeras para ensamblaje y anotación rápida.
+
+1. Crear entorno
+`conda create -n bacterias_env python=3.9`
+
+2. Activar
+`conda activate bacterias_env`
+
+# 3. Instalar herramientas
+# fastp: Control de calidad
+# spades: Ensamblaje
+# prokka: Anotación
+# quast: Evaluación de ensamble
+mamba install fastp spades prokka quast
+\`\`\`
+---
+
+### 🍄 Workflow 2: Genómica de Eucariotas (Levaduras/Hongos)
+Herramientas complejas que suelen tener conflictos con las bacterianas.
+
+\`\`\`bash
+# 1. Crear entorno limpio
+conda create -n hongos_env
+
+# 2. Activar
+conda activate hongos_env
+
+# 3. Instalar herramientas
+# busco: Evaluación de completitud genómica (Crítico para eucariotas)
+# itsx: Identificación de regiones ITS
+mamba install busco itsx
+\`\`\`
+
+## 6. Reproducibilidad
+Para compartir tu entorno con otros (tesis/colaboradores):
+
+**Exportar entorno:**
+\`\`\`bash
+conda env export > environment.yml
+\`\`\`
+
+**Crear entorno desde archivo:**
+\`\`\`bash
+conda env create -f environment.yml
+\`\`\`
+
+---
+
+**Recomendaciones adicionales:**
+1. Siempre usar entornos separados para proyectos diferentes
+2. Especificar versiones de software cuando sea posible
+3. Documentar los comandos usados en cada análisis
+4. Mantener el archivo \`environment.yml\` actualizado
+
+**Nota:** Este archivo debe guardarse con extensión \`.md\` para formato Markdown
+"@ | Out-File -FilePath "guia_conda_mamba.md" -Encoding UTF8
+
