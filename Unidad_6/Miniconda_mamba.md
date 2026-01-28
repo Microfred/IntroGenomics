@@ -119,13 +119,13 @@ conda config --set channel_priority strict
 
 | Acción | Comando | Descripción |
 |--------|---------|-------------|
-| **Crear entorno** | \`conda create -n nombre\` | Crea una "caja" vacía |
-| **Activar** | \`conda activate nombre\` | Entras a la caja para trabajar |
-| **Instalar** | \`mamba install paquete\` | Instala software (usar dentro del entorno) |
-| **Buscar** | \`mamba search paquete\` | Verifica versiones disponibles |
-| **Listar** | \`conda env list\` | Muestra tus entornos creados |
-| **Salir** | \`conda deactivate\` | Sales del entorno actual |
-| **Eliminar** | \`conda env remove -n nombre\` | Borra el entorno |
+| **Crear entorno** | `conda create -n nombre` | Crea una "caja" vacía |
+| **Activar** | `conda activate nombre` | Entras a la caja para trabajar |
+| **Instalar** | `mamba install paquete` | Instala software (usar dentro del entorno) |
+| **Buscar** | `mamba search paquete` | Verifica versiones disponibles |
+| **Listar** | `conda env list` | Muestra tus entornos creados |
+| **Salir** | `conda deactivate` | Sales del entorno actual |
+| **Eliminar** | `conda env remove -n nombre` | Borra el entorno |
 
 ## 5. Workflows: Bacterias vs Hongos
 
@@ -134,24 +134,27 @@ conda config --set channel_priority strict
 Herramientas ligeras para ensamblaje y anotación rápida.
 
 1. Crear entorno
-`conda create -n bacterias_env python=3.9`
+`conda create -n bacterias python=3.9`
 
 2. Activar
-`conda activate bacterias_env`
+`conda activate bacterias`
 
-# 3. Instalar herramientas
-# fastp: Control de calidad
-# spades: Ensamblaje
-# prokka: Anotación
-# quast: Evaluación de ensamble
-mamba install fastp spades prokka quast
-\`\`\`
+ 3. Instalar herramientas
+fastp: Control de calidad
+spades: Ensamblaje
+prokka: Anotación
+quast: Evaluación de ensamble
+
+`mamba install fastp spades prokka quast`
+
+Hasta aquí deberíamos tener los programas ya instalados.
+Hay que verificar que en realidad estén instalados, así como la versión que estamos usando
 ---
 
 ### 🍄 Workflow 2: Genómica de Eucariotas (Levaduras/Hongos)
 Herramientas complejas que suelen tener conflictos con las bacterianas.
 
-\`\`\`bash
+```
 # 1. Crear entorno limpio
 conda create -n hongos_env
 
@@ -162,8 +165,7 @@ conda activate hongos_env
 # busco: Evaluación de completitud genómica (Crítico para eucariotas)
 # itsx: Identificación de regiones ITS
 mamba install busco itsx
-\`\`\`
-
+```
 ## 6. Reproducibilidad
 Para compartir tu entorno con otros (tesis/colaboradores):
 
