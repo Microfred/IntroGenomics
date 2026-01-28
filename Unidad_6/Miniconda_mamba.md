@@ -54,22 +54,22 @@ Es la evolución de Conda, reescrita en C++.
 1. Abre tu terminal (`Ctrl + Alt + T`).
 2. Descarga e instala Miniconda:
 
-# Crear directorio
+Crear directorio
 
 `mkdir -p ~/miniconda3`
 
-# Descargar script
+Descargar script
 
 `wget [https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh](https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh) -O ~/miniconda3/miniconda.sh`
 
-# Ejecutar instalación
+Ejecutar instalación
 
 `bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3`
 
-# Inicializar shell
+Inicializar shell
 
 `~/miniconda3/bin/conda init bash`
-# (Nota: Si usas zsh, cambia 'bash' por 'zsh')
+(Nota: Si usas zsh, cambia 'bash' por 'zsh')
 
 ---
 ## Opción B: 🍎 macOS (Apple)
@@ -85,8 +85,7 @@ curl -O https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
 bash Miniconda3-latest-MacOSX-x86_64.sh
 ```
 
-## 🍏 Mac con Chip M1 / M2 / M3 (Apple Silicon)
-
+### 🍏 Mac con Chip M1 / M2 / M3 (Apple Silicon)
 ```
 curl -O https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-arm64.sh
 bash Miniconda3-latest-MacOSX-arm64.sh
