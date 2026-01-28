@@ -17,18 +17,6 @@ Este repositorio contiene la guía práctica para la instalación y el manejo de
 7. [Reproducibilidad](#7-reproducibilidad)
 
 ---
-# Instalación y Configuración de Conda/Mamba para Bioinformática
-
-[![Conda](https://img.shields.io/badge/conda-environment-blue?logo=anaconda)](https://docs.conda.io/)
-[![Bioconda](https://img.shields.io/badge/bioconda-packages-green?logo=leaflet)](https://bioconda.github.io/)
-[![Conda-Forge](https://img.shields.io/badge/conda--forge-dependencies-orange?logo=condaforge)](https://conda-forge.org/)
-[![macOS](https://img.shields.io/badge/macOS-Intel%20%7C%20Apple%20Silicon-black?logo=apple)](https://www.apple.com/macos/)
-[![Linux](https://img.shields.io/badge/Linux-compatible-yellow?logo=linux)](https://www.kernel.org/)
-[![HPC](https://img.shields.io/badge/HPC-ready-purple)](#)
-[![Reproducible](https://img.shields.io/badge/Reproducible-Yes-brightgreen)](#)
-[![Environment](https://img.shields.io/badge/environment.yml-included-success?logo=yaml)](./environment.yml)
-
----
 
 ## 1. El Problema: El "Infierno de las Dependencias"
 
@@ -79,3 +67,22 @@ bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
 # Inicializar shell
 ~/miniconda3/bin/conda init bash
 # (Nota: Si usas zsh, cambia 'bash' por 'zsh')
+
+---
+## Opción B: 🍎 macOS (Apple)
+
+### Verificar el tipo de chip
+Ve a: **Manzana  > Acerca de este Mac**
+
+---
+
+### 🖥️ Mac con Chip Intel (modelos antiguos)
+
+curl -O https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
+bash Miniconda3-latest-MacOSX-x86_64.sh
+
+## 🍏 Mac con Chip M1 / M2 / M3 (Apple Silicon)
+
+```bash
+curl -O https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-arm64.sh
+bash Miniconda3-latest-MacOSX-arm64.sh
