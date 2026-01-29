@@ -40,7 +40,7 @@ Para consolidar los reportes generados por **fastp**, puedes instalar **MultiQC*
 ### Opción 1: Vía Conda (Recomendado)
 `conda install -c bioconda -c conda-forge multiqc`
 
-###Opción 2: Vía Pip (Python)
+### Opción 2: Vía Pip (Python)
 `pip install multiqc`
 
 
