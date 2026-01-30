@@ -7,7 +7,8 @@ Una vez obtenido el ensamble de calidad (evaluado con QUAST), el siguiente paso 
 
 Antes de anotar, usamos BUSCO para medir qué tan completo es nuestro ensamble basándonos en genes ortólogos de copia única.
 
-Instalación
+Instalación:
+
 `conda create -n busco6 -c bioconda -c conda-forge -c bioconda busco=6.0.0 sepp=4.5.5`
 
 Si la instalación tarda mucho, recuerda que puedes ejecutar conda:
@@ -22,7 +23,7 @@ Ejecución (usando el linaje de hongos como ejemplo)
 `busco -i assembly_output/contigs.fasta -l fungi_odb10 -o busco_output -m genome`
 
 ---
-### Interpretaciòn de resultados de BUSCO:
+### Interpretación de resultados de BUSCO:
 
 ## 📊 Interpretación de Resultados de BUSCO v6
 
@@ -92,16 +93,19 @@ Los flags para las opciones de PROKKA son los siguientes
 
 Funannotate es un pipeline diseñado específicamente para hongos que simplifica el entrenamiento de predictores y la limpieza de modelos de genes.
 
-Paso 1: Limpieza de contigs (eliminar duplicados pequeños)
+Paso 1: Limpieza de contigs (eliminar duplicados pequeños):
+
 `funannotate clean -i assembly.fasta -o assembly_cleaned.fasta`
 
-Paso 2: Sort (ordenar por longitud)
+Paso 2: Sort (ordenar por longitud):
+
 `funannotate sort -i assembly_cleaned.fasta -o assembly_sorted.fasta`
 
-Paso 3: Predicción de genes
-Nota: Requiere especificar el linaje para los modelos de Augustus
+Paso 3: Predicción de genes: 
+
 `funannotate predict -i assembly_sorted.fasta -o funnel_out -s "Especie name" --cpus 8`
 
+*:Nota: Requiere especificar el linaje para los modelos de Augustus*
 ---
 
 ## En resumen:
