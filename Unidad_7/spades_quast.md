@@ -46,7 +46,10 @@ Entender qué hace cada "bandera" o flag 🚩 es fundamental para ajustar el ens
 | `--sc` | Modo Single-cell | Solo para datos MDA (baja biomasa). | `--sc` |
 
 ---
+Antes de realizar el anális de calidad del ensamblado, es importante filtrar los contigs o scaffolds de acuerdo a la longitud de estos, depentiendo el número de scaffolds, puedes elegir 500 ó 1000:
 
+`seqtk seq -A scaffolds.fasta | awk '{if(NR%2==0) {if(length($0)>=1000) print header"\n"$0} else header=$0}' > Scaffolds_1000.fasta´ 
+---
 
 📊 Evaluación con **QUAST**
 Una vez generado el archivo contigs.fasta, es vital evaluar su calidad (N50, número de contigs, longitud total).
@@ -76,3 +79,5 @@ Entender qué hace cada "bandera" o flag 🚩 es fundamental para ajustar el ens
 SPAdes: Bankevich A., et al. (2012). SPAdes: A New Genome Assembly Algorithm and Its Applications to Single-Cell Sequencing. Journal of Computational Biology. doi:10.1089/cmb.2012.0021
 
 QUAST: Gurevich A., et al. (2013). QUAST: quality assessment tool for genome assemblies. Bioinformatics. doi:10.1093/bioinformatics/btt086
+
+
