@@ -59,13 +59,16 @@ Antes de realizar el análisis de calidad del ensamblado, es importante filtrar 
 Una vez generado el archivo contigs.fasta, es vital evaluar su calidad (N50, número de contigs, longitud total).
 
 
-`quast.py \
+```
+quast.py \
   spades_output/contigs.fasta \
   -r reference.fasta \
   -g annotation.gff \
   --threads 8 \
   -o quast_results
-`
+  
+```
+
 
 Entender qué hace cada "bandera" o flag 🚩 es fundamental para ajustar el ensamble según el tipo de genoma y la capacidad de tu servidor. 
 
