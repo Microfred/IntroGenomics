@@ -3,7 +3,7 @@
 Una vez obtenido el ensamble de calidad (evaluado con QUAST), el siguiente paso es identificar las regiones codificantes y asignarles una función biológica.
 
 
-### Evaluación de Completitud con [BUSCO6](https://busco.ezlab.org/busco_userguide.html)
+#### Evaluación de Completitud con [BUSCO6](https://busco.ezlab.org/busco_userguide.html)
 
 Antes de anotar, usamos BUSCO para medir qué tan completo es nuestro ensamble basándonos en genes ortólogos de copia única.
 
