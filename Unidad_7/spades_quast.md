@@ -47,8 +47,12 @@ Entender qué hace cada "bandera" o flag 🚩 es fundamental para ajustar el ens
 
 ---
 Antes de realizar el análisis de calidad del ensamblado, es importante filtrar los contigs o scaffolds de acuerdo a la longitud de estos, dependiendo del número de scaffolds, puedes elegir 500 o 1000:
+**NOTA** Antes de filtrar, asegurate que esté instalado seqtk y awk
+
+`conda install bioconda::seqtk`
 
 `seqtk seq -A scaffolds.fasta | awk '{if(NR%2==0) {if(length($0)>=1000) print header"\n"$0} else header=$0}' > Scaffolds_1000.fasta`
+
 ---
 
 📊 Evaluación con **QUAST**
