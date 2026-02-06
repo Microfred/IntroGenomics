@@ -1,4 +1,4 @@
-# 🧬 Scaffolding Genómico con (RagTag)[https://github.com/malonge/RagTag]
+# 🧬 Scaffolding Genómico con [RagTag](https://github.com/malonge/RagTag)
 
 Este repositorio documenta el flujo de trabajo y la metodología para realizar el **scaffolding** (andamiaje) de ensamblajes genómicos utilizando la herramienta **RagTag**.  
 Este protocolo forma parte de los pipelines de análisis de **MicroFred**.
