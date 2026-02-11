@@ -87,7 +87,7 @@ La práctica hace al maestro. A continuación veremos algunos de los comandos b�
 
 1.- Ejercicios [Codédex](https://www.codedex.io/courses).
 	
-	*Línea de comandos [terminal](https://www.codedex.io/command-line)
+*Línea de comandos [terminal](https://www.codedex.io/command-line).
 
 2.- Adentrarse en el bosque con este [juego de bash](http://web.mit.edu/mprat/Public/web/Terminus/Web/main.html). **No Olvides encontrar a la princesa** 👸
 
