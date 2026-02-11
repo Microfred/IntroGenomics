@@ -32,7 +32,7 @@ Por ejemplo:
 
 `echo algo` nos responde el texto "algo". También lo puedes utilizar con más de una palabra.
 
-`echo hello world`
+`echo hello world!`
 
 Algo así debe verse tu terminal:
 
@@ -79,13 +79,18 @@ Que quiere decir que no existe el comando `algo`.
 
 De igual forma si corres `$ date` (incluyendo el símbolo `$`) te dirá que no existe el comando `$`, aunque `date` sí sea un comando.
 
-
 La práctica hace al maestro. A continuación veremos algunos de los comandos básicos, pero para practicar más parte de la **tarea** será realizar las siguientes actividades prácticas: 
 
-1.- Terminar el curso [Learn the Command Line de CodeAcademy](https://www.codecademy.com/learn/learn-the-command-line). **_Registro para 7 días gratis_**
+---
+
+**TAREAS:**
+
+1.- Ejercicios [Codédex](https://www.codedex.io/courses).
+	*Línea de comandos [terminal](https://www.codedex.io/command-line)
 
 2.- Adentrarse en el bosque con este [juego de bash](http://web.mit.edu/mprat/Public/web/Terminus/Web/main.html). **No Olvides encontrar a la princesa** 👸
 
+---
 
 ### La terminal de [R](https://www.r-project.org/) y [Rstudio](https://rstudio-education.github.io/hopr/starting.html)
 
