@@ -15,6 +15,20 @@ Entregarás un script comentado, una tabla resumen y una bitácora con los coman
 
 La **terminal** permite interactuar con el sistema mediante texto. El **shell** interpreta comandos. **Bash** es uno de los shells disponibles; macOS puede abrir otro shell de forma predeterminada.
 
+### Reconocer y abrir la terminal
+
+Localiza la aplicación de terminal en el equipo. El icono y la apariencia pueden variar con el sistema operativo.
+
+![Icono de la aplicación Terminal utilizado en el material original del curso](https://raw.githubusercontent.com/Microfred/IntroGenomics/main/01terminal.png)
+
+*Figura 1. Icono de referencia para reconocer la aplicación de terminal.*
+
+Al abrirla, identifica el texto que aparece antes de escribir un comando:
+
+![Ventana de terminal con el usuario, el equipo y el prompt del ejemplo original](https://raw.githubusercontent.com/Microfred/IntroGenomics/main/02terminal.png)
+
+*Figura 2. Captura original de la terminal. Los nombres del usuario y del equipo corresponden al ejemplo del profesor.*
+
 Para que los ejemplos se ejecuten en Bash, abre una terminal e inicia:
 
 ```bash
@@ -33,7 +47,34 @@ programa opciones argumentos
 
 Por ejemplo, `head -n 4 archivo.fasta` muestra las cuatro primeras líneas del archivo indicado.
 
+### Primeros comandos y lectura de resultados
+
+Desde la terminal, ejecuta:
+
+```bash
+date
+printf 'Hola, mundo\n'
+```
+
+![Captura original con la ejecución de date y echo y sus resultados en la terminal](https://raw.githubusercontent.com/Microfred/IntroGenomics/main/03terminal.png)
+
+*Figura 3. Ejemplo original de comandos y resultados. La fecha y el aspecto del prompt dependen del equipo; cada resultado aparece después del comando que lo genera.*
+
+**Para discutir en clase:** distingue el comando escrito, sus argumentos, la salida y el siguiente prompt.
+
+La siguiente imagen también forma parte de los recursos originales y permite comparar la sintaxis entre lenguajes:
+
+![Ejemplo original de la instrucción print para mostrar hello world en Python](https://raw.githubusercontent.com/Microfred/IntroGenomics/main/hello_world.png)
+
+*Figura 4. La instrucción de esta imagen corresponde a Python. En los ejercicios de Bash de esta unidad utilizamos comandos como `printf`; cada bloque debe ejecutarse con el intérprete correspondiente.*
+
 ## 2. Crear un espacio de práctica
+
+El explorador gráfico y la terminal permiten trabajar con el mismo sistema de archivos. Observa la organización en carpetas y archivos de la captura original:
+
+![Explorador Finder con las carpetas y archivos de los ejercicios originales de la unidad](https://raw.githubusercontent.com/Microfred/IntroGenomics/main/finder.png)
+
+*Figura 5. Vista gráfica de archivos y directorios. Los nombres y las rutas de la captura pertenecen al ejemplo original; la práctica siguiente crea un espacio de trabajo propio.*
 
 Ejecuta este bloque desde una carpeta donde puedas trabajar. Crea una carpeta nueva con `mktemp` para evitar mezclar ejercicios de distintas ejecuciones.
 
@@ -167,6 +208,10 @@ grep '^>' 00_datos/demo_a.fasta | sed 's/^>//' | cut -d ' ' -f 1
 - `>>` añade contenido al final.
 - La tubería `|` conecta la salida de un comando con la entrada del siguiente.
 
+![Ilustración original de Mario y tuberías utilizada para introducir el operador pipe](https://img.youtube.com/vi/uMCCxuGIGtw/hqdefault.jpg)
+
+*Figura 6. Recurso visual original para introducir las tuberías. En Bash, `|` permite que la salida de un programa sea procesada por el siguiente.*
+
 El último comando debe mostrar `demo_01` y `demo_02`, cada identificador en una línea. Si repites todo el bloque, el primer comando reinicia el archivo de cabeceras y el segundo añade las restantes, sin acumular duplicados de ejecuciones anteriores.
 
 ## 7. Copiar, mover y eliminar archivos de práctica
@@ -204,6 +249,10 @@ diff 00_datos/demo_a.fasta 01_resultados/extraidos/00_datos/demo_a.fasta
 | `-C` | Cambiar al directorio de destino para la operación. |
 
 Si `diff` no produce salida y finaliza correctamente, las dos copias comparadas son idénticas.
+
+![Viñeta original de XKCD sobre la dificultad de recordar las opciones de tar](https://raw.githubusercontent.com/Microfred/IntroGenomics/main/tar_xkcd.png)
+
+*Figura 7. Viñeta conservada del material original. El objetivo de la práctica es comprender las opciones y consultar la ayuda cuando sea necesario.*
 
 ## 9. Variables y bucles
 
@@ -350,6 +399,20 @@ chmod +x scripts/resumir_fasta.sh
 
 El permiso de ejecución no es necesario cuando se invoca explícitamente con `bash archivo.sh` y el archivo puede leerse. La línea `#!` indica el intérprete para la ejecución directa.
 
+### Reconocer los permisos en una lista de archivos
+
+![Esquema original de los permisos de un archivo Unix: tipo, propietario, grupo y otros usuarios](https://raw.githubusercontent.com/AliciaMstt/BioinfinvRepro/master/Unidad1/permissions.png)
+
+*Figura 8. Esquema de permisos utilizado en el material de origen. La imagen se recuperó del repositorio de Alicia Mastretta Yanes, porque `permissions.png` no estaba incluido en el árbol de IntroGenomics revisado.*
+
+En una salida de `ls -l`, identifica el tipo de archivo y los permisos de lectura (`r`), escritura (`w`) y ejecución (`x`) para propietario, grupo y otros usuarios. Compara el resultado antes y después de `chmod +x`:
+
+```bash
+ls -l scripts/resumir_fasta.sh
+```
+
+**Pregunta:** ¿qué cambia al dar permiso de ejecución y por qué ese permiso no demuestra que el script sea correcto?
+
 ## 12. Descargar secuencias públicas de NCBI
 
 Actividad adicional con conexión. Se conservan las accesiones del ejemplo original de *Geosmithia*, ahora con versiones explícitas:
@@ -361,6 +424,10 @@ Actividad adicional con conexión. Se conservan las accesiones del ejemplo origi
 | KF808310.1 | Geosmithia sp. 21 NL-2014, cepa MK1665. |
 
 Estos registros corresponden a regiones ribosomales con ITS y segmentos asociados; no son genomas completos. Para estudios taxonómicos debe verificarse además el estatus del material y la correspondencia de los marcadores.
+
+![Captura original de un editor de texto con el script para descargar secuencias de Geosmithia](https://raw.githubusercontent.com/Microfred/IntroGenomics/main/get_seq.png)
+
+*Figura 9. Captura original del script de descarga: permite reconocer comentarios, comandos y rutas. Se conserva como apoyo visual; el bloque de ejecución actualizado aparece a continuación. La captura utiliza Atom, un editor histórico del material.*
 
 Desde la raíz de la práctica:
 
@@ -406,5 +473,11 @@ La bitácora deberá registrar la pregunta del ejercicio, el procedimiento, el r
 - [Manual de GNU tar](https://www.gnu.org/software/tar/manual/tar.html).
 - [Manual de curl](https://curl.se/docs/manpage.html).
 - Material introductorio original del curso, que reconoce adaptaciones de recursos de [Alicia Mastretta Yanes](https://github.com/AliciaMstt/BioinfinvRepro).
+
+Las imágenes del repositorio original se conservan en sus secciones correspondientes, con texto alternativo y pies de figura. Los enlaces completos permiten visualizarlas desde este Markdown y al incorporarlo al repositorio. Las capturas históricas acompañan la explicación; los bloques de código indican los comandos de la práctica actualizada.
+
+![Imagen de cierre To be continued conservada de los recursos originales del curso](https://raw.githubusercontent.com/Microfred/IntroGenomics/main/to_be_continued.png)
+
+*Figura 10. Imagen original de cierre de la unidad.*
 
 **Actualización:** 19 de octubre de 2026.
